@@ -17,9 +17,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
-    android:installLocation="auto"
-    android:sharedUserId="archos.openmediacenter"
-    android:sharedUserMaxSdkVersion="32">
+    android:installLocation="auto">
 
     <supports-screens android:largeScreens="true" />
 
@@ -192,7 +190,7 @@
         <!-- Provides search suggestions for video search. -->
         <provider
             android:name="com.archos.mediacenter.video.browser.SearchProviderVideo"
-            android:authorities="browser.SearchProviderVideocommunity" />
+            android:authorities="com.bobbyllm.novaplayerkids.browser.SearchProviderVideocommunity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -1238,7 +1236,7 @@
         <!-- ContentProvider for media -->
         <provider
             android:name="com.archos.mediaprovider.video.VideoProvider"
-            android:authorities="com.archos.media.videocommunity;com.archos.media.scrapercommunity"
+            android:authorities="com.bobbyllm.novaplayerkids.media.videocommunity;com.bobbyllm.novaplayerkids.media.scrapercommunity"
             android:exported="true" />
         <!-- BroadcastReceiver to trigger database import -->
         <receiver
