@@ -101,6 +101,7 @@ android {
         release {
             if (keystorePropertiesFile.exists()) {
                 storeFile = file(keystoreProperties['storeFile'])
+                storeType = keystoreProperties['storeType']
                 storePassword = keystoreProperties['storePassword']
                 keyAlias = keystoreProperties['keyAlias']
                 keyPassword = keystoreProperties['keyPassword']
@@ -151,7 +152,7 @@ android {
         }
     }
     defaultConfig {
-        applicationId = "org.courville.nova"
+        applicationId = "com.bobbyllm.novaplayerkids"
         generatedDensities = []
         minSdkVersion 23
         targetSdkVersion 36
@@ -169,7 +170,7 @@ android {
             versionCode = 2549909 + getDate()
         }
         //archivesBaseName = "" + applicationId + "-" + versionCode + "-" + versionName
-        project.extensions.getByType(BasePluginExtension).archivesName.set(applicationId + "-" + versionCode + "-" + versionName)
+        project.extensions.getByType(BasePluginExtension).archivesName.set("NovaPlayerKids-v" + novaVersionName)
         def archivesNameValue = project.extensions.getByType(BasePluginExtension).archivesName.get()
         println("defaultConfig archivesBaseName : " + archivesNameValue)
         println("defaultConfig versionName : " + versionName)
@@ -198,7 +199,7 @@ android {
             buildConfigField "String", "SENTRY_DSN", "\"\"";
         }
         resValue "string", "VERSION_NAME", versionName
-        resValue "string", "APP_INFO", "Nova v" + versionName + " (" + applicationId + ")"
+        resValue "string", "APP_INFO", "Nova Player Kids v" + versionName + " (" + applicationId + ")"
     }
     bundle {
         language {
